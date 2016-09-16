@@ -1,11 +1,12 @@
 package nobles.christopher.BankAccount2;
-
+import java.util.Scanner;
 /**
  * Created by christophernobles on 9/15/16.
  */
 public class Teller {
 
     Account userAccount;
+    Scanner userInput = new Scanner(System.in);
 
     public Teller () {
 
@@ -41,5 +42,15 @@ public class Teller {
     public double credit (double credit) {
         double newBalance = userAccount.balance + credit;
         return newBalance;
+    }
+
+    public int inputAccountNumber (int password) {
+
+        password = userInput.nextInt();
+
+        if (password == userAccount.getAcctNum())
+        {
+            System.out.println("This worked.");
+
     }
 }

@@ -9,13 +9,15 @@ public class Account {
     public enum AccountType{CHECKING, SAVING, INVESTMENT};
 
     private int acctNum = 0;
-    private SecureRandom accountNumber;
+    private SecureRandom accountNumber = new SecureRandom();
+
 
     double balance = 0;
 
-    public SecureRandom createAccountNum () {
-
-
+    public int accountNumberCreation() {
+        int acctnum = accountNumber.nextInt(99999999);
+        //System.out.println(acctnum);
+        return acctnum;
     }
 
     public int getAcctNum() {

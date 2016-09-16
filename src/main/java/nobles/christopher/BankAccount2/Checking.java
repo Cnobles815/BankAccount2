@@ -5,6 +5,11 @@ package nobles.christopher.BankAccount2;
  */
 public class Checking extends Account {
 
-    double accountBalance = 0;
+    double accountBalance;
+
+    public Checking () {
+
+        accountBalance = 0;
+    }
 
 }
