@@ -6,9 +6,10 @@ import java.util.Scanner;
 public class Teller {
 
     Account userAccount;
+    AccountManager accountManager;
     Scanner userInput = new Scanner(System.in);
 
-    public Teller () {
+    public Teller() {
 
     }
 
@@ -34,23 +35,28 @@ public class Teller {
         String lastName = userLastName;
     }
 
-    public double debit (double debit) {
+    public double debit(double debit) {
         double newBalance = userAccount.balance - debit;
         return newBalance;
     }
 
-    public double credit (double credit) {
+    public double credit(double credit) {
         double newBalance = userAccount.balance + credit;
         return newBalance;
     }
 
-    public int inputAccountNumber (int password) {
+    public int inputAccountNumber(int password) {
 
         password = userInput.nextInt();
 
-        if (password == userAccount.getAcctNum())
-        {
+        if (password == userAccount.getAcctNum()) {
             System.out.println("This worked.");
 
+        }
+        return 5;
+    }
+
+    public int searchAccountNumber() {
+        return accountManager.accountSearch();
     }
 }
